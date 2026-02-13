@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RachnaX - AI-powered creative guidance for students and beginner creators">
+  <title>RachnaX - Turn Ideas into Impactful Content</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lottie Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  
+  <!-- GSAP Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <div class="nav-brand">
+        <div class="nav-logo">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
+            <path d="M12 10L20 16L12 22V10Z" fill="white"/>
+            <defs>
+              <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                <stop offset="0%" stop-color="#8b5cf6"/>
+                <stop offset="100%" stop-color="#3b82f6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="nav-brand-text">RachnaX</span>
+      </div>
+      
+      <div class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li class="nav-item"><a href="#features" class="nav-link">Features</a></li>
+          <li class="nav-item"><a href="#vision" class="nav-link">Vision</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+      
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span class="nav-toggle-icon"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <canvas id="particle-canvas" class="particle-canvas"></canvas>
+      <div class="gradient-bg" id="gradient-bg"></div>
+      <div class="grid-pattern"></div>
+      <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+      </div>
+      <div class="neural-lines">
+        <svg class="neural-svg" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+          <g class="neural-group">
+            <line x1="100" y1="100" x2="300" y2="200" class="neural-line" />
+            <line x1="300" y1="200" x2="500" y2="150" class="neural-line" />
+            <line x1="500" y1="150" x2="700" y2="250" class="neural-line" />
+            <line x1="700" y1="250" x2="900" y2="180" class="neural-line" />
+            <circle cx="100" cy="100" r="3" class="neural-dot" />
+            <circle cx="300" cy="200" r="3" class="neural-dot" />
+            <circle cx="500" cy="150" r="3" class="neural-dot" />
+            <circle cx="700" cy="250" r="3" class="neural-dot" />
+            <circle cx="900" cy="180" r="3" class="neural-dot" />
+          </g>
+        </svg>
+      </div>
+      <div class="micro-dots"></div>
+      <div class="container">
+        <div class="hero-content fade-in">
+          <div class="hero-badge">
+            <span class="badge-icon">✨</span>
+            <span class="badge-text">AI-Powered Creative Guidance</span>
+          </div>
+          <h1 class="hero-title">Turn Ideas into Impactful Content</h1>
+          <p class="hero-subtitle">Empower your creativity with intelligent guidance. RachnaX helps students and beginner creators transform simple ideas into structured, platform-ready content.</p>
+          <div class="hero-cta">
+            <a href="#" class="btn-primary btn-large btn-animated">
+              <span class="btn-text">Get Started Free</span>
+              <span class="btn-glow"></span>
+              <span class="btn-border-glow"></span>
+            </a>
+            <a href="#how-it-works" class="btn-secondary btn-large">See How It Works</a>
+          </div>
+          <div class="scroll-indicator">
+            <span class="scroll-text">Scroll to explore</span>
+            <div class="scroll-arrow">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M10 4V16M10 16L6 12M10 16L14 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem" id="problem">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Struggles Creators Face</h2>
+          <p class="section-subtitle">We understand the challenges that hold you back from creating great content</p>
+        </div>
+        <div class="problem-grid">
+          <div class="card reveal">
+            <div class="card-icon-wrapper">
+              <div class="card-icon">💭</div>
+            </div>
+            <h3 class="card-title">Blank Page Paralysis</h3>
+            <p class="card-description">Staring at an empty screen, unsure how to transform your raw idea into structured content that resonates.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon-wrapper">
+              <div class="card-icon">🎯</div>
+            </div>
+            <h3 class="card-title">Platform Confusion</h3>
+            <p class="card-description">Struggling to adapt your content for different platforms—what works on Instagram doesn't work on YouTube.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon-wrapper">
+              <div class="card-icon">⏰</div>
+            </div>
+            <h3 class="card-title">Time-Consuming Planning</h3>
+            <p class="card-description">Spending hours brainstorming and organizing ideas when you'd rather be creating and sharing your content.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-subtitle">Four simple steps to transform your ideas into impactful content</p>
+        </div>
+        <div class="steps-wrapper">
+          <div class="steps-container">
+            <div class="step reveal">
+              <div class="step-number">
+                <span>1</span>
+                <div class="step-glow"></div>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">Input Your Idea</h3>
+                <p class="step-description">Simply describe your content idea in plain language. No technical jargon needed—just tell us what you want to create.</p>
+              </div>
+            </div>
+            
+            <div class="step reveal">
+              <div class="step-number">
+                <span>2</span>
+                <div class="step-glow"></div>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">Guided Brainstorming</h3>
+                <p class="step-description">RachnaX asks thoughtful questions to help you explore angles, themes, and approaches you might not have considered.</p>
+              </div>
+            </div>
+            
+            <div class="step reveal">
+              <div class="step-number">
+                <span>3</span>
+                <div class="step-glow"></div>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">Structured Development</h3>
+                <p class="step-description">Watch your idea transform into a clear, organized content plan with sections, key points, and creative direction.</p>
+              </div>
+            </div>
+            
+            <div class="step reveal">
+              <div class="step-number">
+                <span>4</span>
+                <div class="step-glow"></div>
+              </div>
+              <div class="step-content">
+                <h3 class="step-title">Platform Adaptation</h3>
+                <p class="step-description">Get platform-specific recommendations for Instagram, YouTube, blogs, and more—optimized for each format.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Features</h2>
+          <p class="section-subtitle">Everything you need to create compelling content with confidence</p>
+        </div>
+        <div class="features-grid">
+          <div class="card reveal">
+            <div class="card-icon-wrapper">
+              <div class="card-icon">💬</div>
+            </div>
+            <h3 class="card-title">Plain Language Input</h3>
+            <p class="card-description">No complex forms or technical terms. Just describe your idea naturally, and RachnaX understands what you want to create.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon-wrapper">
+              <div class="card-icon">🧠</div>
+            </div>
+            <h3 class="card-title">Guided Brainstorming</h3>
+            <p class="card-description">Interactive questions help you explore your idea from multiple angles, uncovering creative possibilities you hadn't considered.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon-wrapper">
+              <div class="card-icon">📱</div>
+            </div>
+            <h3 class="card-title">Platform Adaptation</h3>
+            <p class="card-description">Get tailored recommendations for Instagram, YouTube, TikTok, blogs, and more—each optimized for the platform's unique format.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon-wrapper">
+              <div class="card-icon">🎨</div>
+            </div>
+            <h3 class="card-title">Visual Planning</h3>
+            <p class="card-description">See your content structure visually organized with clear sections, key points, and creative direction at a glance.</p>
+          </div>
+          <div class="card reveal">
+            <div class="card-icon-wrapper">
+              <div class="card-icon">📊</div>
+            </div>
+            <h3 class="card-title">Content Dashboard</h3>
+            <p class="card-description">Track all your content ideas in one place, from initial brainstorm to final platform-ready plan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why RachnaX Section -->
+    <section class="why-rachnax" id="why-rachnax">
+      <div class="container">
+        <div class="why-content reveal">
+          <h2 class="why-title">RachnaX enhances creativity, doesn't replace it</h2>
+          <p class="why-description">We believe your ideas are valuable. RachnaX is here to guide, structure, and amplify your creative vision—not to do the thinking for you. You remain the creator, we're just your creative partner.</p>
+          <a href="#" class="btn-primary btn-large">Start Creating Today</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who It's For Section -->
+    <section class="who-its-for" id="who-its-for">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Built For Creators Who Want Clarity</h2>
+          <p class="section-subtitle">Whether you're just starting or looking to level up, RachnaX is designed for creators who want structure without losing their creative spark</p>
+        </div>
+        <div class="audience-grid">
+          <div class="audience-card reveal">
+            <div class="audience-icon">🎓</div>
+            <h3 class="audience-title">Students</h3>
+          </div>
+          <div class="audience-card reveal">
+            <div class="audience-icon">🎥</div>
+            <h3 class="audience-title">Beginner YouTubers</h3>
+          </div>
+          <div class="audience-card reveal">
+            <div class="audience-icon">📸</div>
+            <h3 class="audience-title">Instagram Creators</h3>
+          </div>
+          <div class="audience-card reveal">
+            <div class="audience-icon">✍️</div>
+            <h3 class="audience-title">Bloggers</h3>
+          </div>
+          <div class="audience-card reveal">
+            <div class="audience-icon">🚀</div>
+            <h3 class="audience-title">Indie Makers</h3>
+          </div>
+          <div class="audience-card reveal">
+            <div class="audience-icon">💻</div>
+            <h3 class="audience-title">Tech Learners</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before vs After Section -->
+    <section class="before-after" id="before-after">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">From Chaos to Clarity</h2>
+          <p class="section-subtitle">See the transformation RachnaX brings to your creative process</p>
+        </div>
+        <div class="comparison-container">
+          <div class="before-column reveal">
+            <h3 class="column-title">Before RachnaX</h3>
+            <ul class="comparison-list">
+              <li class="comparison-item negative">
+                <span class="icon">❌</span>
+                <span class="text">Confused ideas with no direction</span>
+              </li>
+              <li class="comparison-item negative">
+                <span class="icon">❌</span>
+                <span class="text">No structure or organization</span>
+              </li>
+              <li class="comparison-item negative">
+                <span class="icon">❌</span>
+                <span class="text">Platform inconsistency and confusion</span>
+              </li>
+              <li class="comparison-item negative">
+                <span class="icon">❌</span>
+                <span class="text">Time wasted on planning</span>
+              </li>
+            </ul>
+          </div>
+          <div class="divider-line"></div>
+          <div class="after-column reveal">
+            <h3 class="column-title">After RachnaX</h3>
+            <ul class="comparison-list">
+              <li class="comparison-item positive">
+                <span class="icon">✅</span>
+                <span class="text">Structured roadmap with clear steps</span>
+              </li>
+              <li class="comparison-item positive">
+                <span class="icon">✅</span>
+                <span class="text">Platform-ready scripts and content</span>
+              </li>
+              <li class="comparison-item positive">
+                <span class="icon">✅</span>
+                <span class="text">Clear execution plan for each platform</span>
+              </li>
+              <li class="comparison-item positive">
+                <span class="icon">✅</span>
+                <span class="text">Faster workflow and more creativity</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Demo Preview Section -->
+    <section class="demo-preview" id="demo-preview">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">See RachnaX in Action</h2>
+          <p class="section-subtitle">Watch how a simple idea transforms into structured, platform-ready content</p>
+        </div>
+        <div class="demo-container">
+          <div class="demo-input reveal">
+            <h3 class="demo-label">Input</h3>
+            <div class="input-mockup">
+              <input type="text" class="typewriter-input" id="typewriter-input" readonly placeholder="Type your idea here...">
+              <span class="typewriter-cursor"></span>
+            </div>
+          </div>
+          <div class="demo-output reveal">
+            <h3 class="demo-label">Output</h3>
+            <div class="output-mockup" id="output-mockup">
+              <div class="loading-state" id="loading-state">
+                <span class="loading-text">Generating</span>
+                <span class="loading-dots">
+                  <span class="dot">.</span>
+                  <span class="dot">.</span>
+                  <span class="dot">.</span>
+                </span>
+              </div>
+              <div class="output-content" id="output-content">
+                <!-- Output items will be dynamically generated -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Behind RachnaX Section -->
+    <section class="tech-behind" id="tech-behind">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Powered by Intelligent Architecture</h2>
+          <p class="section-subtitle">Advanced technology that understands your creative vision and transforms it into actionable content</p>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-card reveal">
+            <div class="tech-icon">🧠</div>
+            <h3 class="tech-title">Context-aware AI engine</h3>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-icon">⚡</div>
+            <h3 class="tech-title">Structured prompting logic</h3>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-icon">🎯</div>
+            <h3 class="tech-title">Platform optimization layer</h3>
+          </div>
+          <div class="tech-card reveal">
+            <div class="tech-icon">💡</div>
+            <h3 class="tech-title">Guided brainstorming system</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    
+    <!-- Vision Section -->
+    <section class="vision" id="vision">
+      <div class="container">
+        <div class="vision-content">
+          <h2 class="section-title">Our Vision</h2>
+          <p class="vision-statement">To democratize structured content creation for students and emerging creators across Bharat</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section class="roadmap" id="roadmap">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Coming Soon</h2>
+        </div>
+        <div class="roadmap-grid">
+          <div class="roadmap-card">
+            <div class="roadmap-icon">🌐</div>
+            <h3 class="roadmap-title">Multi-language support</h3>
+          </div>
+          <div class="roadmap-card">
+            <div class="roadmap-icon">🤝</div>
+            <h3 class="roadmap-title">Collaboration mode</h3>
+          </div>
+          <div class="roadmap-card">
+            <div class="roadmap-icon">📊</div>
+            <h3 class="roadmap-title">Creator analytics</h3>
+          </div>
+          <div class="roadmap-card">
+            <div class="roadmap-icon">🎤</div>
+            <h3 class="roadmap-title">Voice-to-content input</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Creator Section -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title">Contact & Creator</h2>
+        </div>
+        <div class="contact-content reveal">
+          <div class="creator-card">
+            <div class="creator-avatar">
+              <!-- Profile image: place profile.png in the root directory -->
+              <img src="profile.png" alt="Ansari Hesham Raza" class="avatar-image" id="avatar-image" style="display: none;">
+              <div class="avatar-placeholder" id="avatar-placeholder">
+                <span class="avatar-initial">HR</span>
+              </div>
+            </div>
+            <h3 class="creator-name">Ansari Hesham Raza</h3>
+            <p class="creator-bio">
+              Student innovator, UI/UX designer, & front-end developer dedicated to building purposeful digital experiences.
+Through RachnaX, I aim to empower Bharat’s next generation of creators with clarity, confidence, and direction toward content creation.
+            </p>
+            <div class="contact-links">
+              <a href="mailto:contact@rachnax.com" class="contact-link" aria-label="Email">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Email</span>
+              </a>
+              <a href="https://linkedin.com/in/ansariheshamraza" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">© 2026 RachnaX. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
