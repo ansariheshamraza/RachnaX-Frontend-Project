@@ -920,7 +920,7 @@ if (prefersReducedMotion.matches) {
 // ============================================
 
 // Configuration: Set your profile image URL here
-const PROFILE_IMAGE_URL = 'https://avatars.githubusercontent.com/u/187095376?v=4'; // Profile image filename
+const PROFILE_IMAGE_URL = 'https://media.licdn.com/dms/image/v2/D4D03AQHj_1rJcxRoNw/profile-displayphoto-scale_200_200/B4DZxBNGC_JcAY-/0/1770620479507?e=1772668800&v=beta&t=S9rqepc72FPn2vz7JFCpmDbPvHEnUjLJ7OHNNBn-BuM'; // Profile image filename
 
 const avatarImage = document.getElementById('avatar-image');
 const avatarPlaceholder = document.getElementById('avatar-placeholder');
@@ -954,4 +954,5 @@ if (avatarImage && avatarPlaceholder && PROFILE_IMAGE_URL) {
 console.log('%c🚀 RachnaX Landing Page', 'color: #8b5cf6; font-size: 20px; font-weight: bold;');
 console.log('%cBuilt with modern web technologies', 'color: #64748b; font-size: 14px;');
 console.log('%c✨ Enhanced with typewriter animation & active nav', 'color: #3b82f6; font-size: 12px;');
+
 
